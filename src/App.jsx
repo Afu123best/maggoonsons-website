@@ -1,17 +1,98 @@
+import { useEffect, useRef, useState } from "react";
 import "./App.css";
 
+// Fades/slides elements with class "reveal" or "reveal-group" up into
+// place the first time they scroll into view.
+function useScrollReveal() {
+  useEffect(() => {
+    const els = document.querySelectorAll(".reveal, .reveal-group");
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("in-view");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15, rootMargin: "0px 0px -60px 0px" }
+    );
+    els.forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
+}
+
+// Shrinks the navbar slightly once the page has been scrolled.
+function useScrolledNav(threshold = 40) {
+  const [scrolled, setScrolled] = useState(false);
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > threshold);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [threshold]);
+  return scrolled;
+}
+
+// A stat that counts up from 0 to its value once it enters the viewport.
+function Stat({ value, suffix = "", label }) {
+  const ref = useRef(null);
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting) return;
+        observer.disconnect();
+
+        const duration = 1400;
+        const start = performance.now();
+
+        const step = (now) => {
+          const progress = Math.min((now - start) / duration, 1);
+          const eased = 1 - Math.pow(1 - progress, 3);
+          setCount(Math.round(eased * value));
+          if (progress < 1) requestAnimationFrame(step);
+        };
+
+        requestAnimationFrame(step);
+      },
+      { threshold: 0.4 }
+    );
+
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [value]);
+
+  return (
+    <div className="stat" ref={ref}>
+      <span className="stat-value">
+        {count}
+        {suffix}
+      </span>
+      <span className="stat-label">{label}</span>
+    </div>
+  );
+}
+
 function App() {
+  useScrollReveal();
+  const scrolled = useScrolledNav();
+
   return (
     <div className="site">
-      <header className="navbar">
+      <header className={`navbar${scrolled ? " scrolled" : ""}`}>
         <a href="/" className="logo">
           <img src="/logo.png" alt="Maggoon Sons" />
         </a>
 
         <nav>
           <a href="#about">About</a>
+          <a href="#process">Process</a>
           <a href="#verticals">Our Business</a>
-          <a href="#products">Products</a>
           <a href="#contact">Contact</a>
         </nav>
 
@@ -31,14 +112,18 @@ function App() {
               <em>industries & borders.</em>
             </h1>
 
+            <p className="hero-tagline">
+              Importers – Exporters – Sourcing Agents
+            </p>
+
             <p className="hero-description">
               M.R. Maggoon & Sons is a Pakistan-based importer, exporter and
               sourcing agent connecting businesses across international
               markets.
             </p>
 
-            <a href="#products" className="hero-button">
-              Explore our products
+            <a href="#verticals" className="hero-button">
+              Explore our business
               <span>↓</span>
             </a>
           </div>
@@ -61,38 +146,42 @@ function App() {
 
         <div className="trade-ticker">
           <div className="ticker-track">
-            <span>TEXTILES</span>
-            <i>✦</i>
-            <span>POLYMERS</span>
-            <i>✦</i>
-            <span>CHEMICALS</span>
-            <i>✦</i>
-            <span>CEMENT</span>
-            <i>✦</i>
-            <span>COAL</span>
-            <i>✦</i>
-            <span>AGRO PRODUCTS</span>
-            <i>✦</i>
+            <div className="ticker-group">
+              <span>TEXTILES</span>
+              <i>✦</i>
+              <span>POLYMERS</span>
+              <i>✦</i>
+              <span>CHEMICALS</span>
+              <i>✦</i>
+              <span>CEMENT</span>
+              <i>✦</i>
+              <span>COAL</span>
+              <i>✦</i>
+              <span>AGRO PRODUCTS</span>
+              <i>✦</i>
+            </div>
 
-            <span>TEXTILES</span>
-            <i>✦</i>
-            <span>POLYMERS</span>
-            <i>✦</i>
-            <span>CHEMICALS</span>
-            <i>✦</i>
-            <span>CEMENT</span>
-            <i>✦</i>
-            <span>COAL</span>
-            <i>✦</i>
-            <span>AGRO PRODUCTS</span>
-            <i>✦</i>
+            <div className="ticker-group">
+              <span>TEXTILES</span>
+              <i>✦</i>
+              <span>POLYMERS</span>
+              <i>✦</i>
+              <span>CHEMICALS</span>
+              <i>✦</i>
+              <span>CEMENT</span>
+              <i>✦</i>
+              <span>COAL</span>
+              <i>✦</i>
+              <span>AGRO PRODUCTS</span>
+              <i>✦</i>
+            </div>
           </div>
         </div>
 
         <section className="intro" id="about">
           <p className="eyebrow">WHO WE ARE</p>
 
-          <div className="intro-grid">
+          <div className="intro-grid reveal">
             <h2>
               More than seven decades of
               <em> relationships.</em>
@@ -100,14 +189,24 @@ function App() {
 
             <div>
               <p>
-                Founded in 1949 by Mr. Mian Mohammad Rafi, M.R. Maggoon & Sons
-                began as a trading company and has grown into a trusted
-                sourcing partner for businesses and brands in Pakistan.
+                MRM was formed in 1949 by Mr. Mian Mohammad Rafi (Late) as a
+                trading company focused on the import of tea, fishing nets
+                and other goods. Over time, the company evolved into a
+                leading sourcing agent for multiple businesses and brands in
+                Pakistan.
               </p>
 
               <p>
-                We connect buyers and sellers, understand their needs and
-                build relationships that last.
+                We exist because of the relationships we build. MRM focuses
+                on the needs of both buyer and seller, bridging any gaps
+                between them along the way.
+              </p>
+
+              <p>
+                Trust is the foundation of every business, and trust takes
+                time to build. Operating since 1949, our company stands on
+                the founding pillars of trust and relationships with both
+                national and international partners.
               </p>
 
               <a href="#contact" className="text-link">
@@ -116,7 +215,243 @@ function App() {
             </div>
           </div>
         </section>
+
+        <section className="process" id="process">
+          <div className="process-header reveal">
+            <div className="process-label">
+              <span></span>
+              HOW WE WORK
+            </div>
+
+            <h2>
+              From sourcing
+              <em> to delivery.</em>
+            </h2>
+
+            <p>
+              Four steps that guide every shipment we handle, from first
+              contact to final delivery.
+            </p>
+          </div>
+
+          <div className="process-steps reveal-group">
+            <div className="process-step">
+              <span className="step-number">01</span>
+              <h3>Sourcing</h3>
+              <p>
+                Identifying and vetting suppliers across our network of
+                international partners.
+              </p>
+            </div>
+
+            <div className="process-step">
+              <span className="step-number">02</span>
+              <h3>Quality Assurance</h3>
+              <p>
+                Verifying specifications and quality standards before every
+                shipment leaves.
+              </p>
+            </div>
+
+            <div className="process-step">
+              <span className="step-number">03</span>
+              <h3>Trade & Logistics</h3>
+              <p>
+                Managing documentation, shipping and customs clearance across
+                borders.
+              </p>
+            </div>
+
+            <div className="process-step">
+              <span className="step-number">04</span>
+              <h3>Delivery</h3>
+              <p>Ensuring materials reach buyers on time, every time.</p>
+            </div>
+          </div>
+        </section>
+
+        <section className="verticals" id="verticals">
+          <div className="verticals-header reveal">
+            <div className="verticals-label">
+              <span></span>
+              OUR BUSINESS
+            </div>
+
+            <h2>
+              Connecting industries
+              <em> across markets.</em>
+            </h2>
+
+            <p>
+              We operate across a diverse range of industries, sourcing and
+              connecting businesses with trusted international suppliers and
+              markets.
+            </p>
+          </div>
+
+          <div className="verticals-list reveal-group">
+            <div className="vertical-card">
+              <span className="vertical-number">01</span>
+
+              <div>
+                <h3>Textiles</h3>
+                <p>Raw materials and polymers for textile manufacturing.</p>
+                <ul>
+                  <li>
+                    Polypropylene — Film/Tape (Raffia) / Injection / CPP /
+                    BOPP
+                  </li>
+                  <li>HDPE — Film / Injection / Monofilament Yarn</li>
+                  <li>LLDPE / LDPE (Film)</li>
+                  <li>DYC Resin, Suspension / Emulsion</li>
+                </ul>
+              </div>
+
+              <span className="vertical-arrow">↗</span>
+            </div>
+
+            <div className="vertical-card">
+              <span className="vertical-number">02</span>
+
+              <div>
+                <h3>Polymers & Chemicals</h3>
+                <p>
+                  Industrial materials serving diverse manufacturing sectors.
+                </p>
+                <ul>
+                  <li>
+                    Raw materials for Textile / Leather / Plastics / Rubber /
+                    PRWES
+                  </li>
+                  <li>ISO Mixed Xylene / Meta-Ortho-Pharamkalene</li>
+                  <li>Rubber Synthetic / 1501</li>
+                </ul>
+              </div>
+
+              <span className="vertical-arrow">↗</span>
+            </div>
+
+            <div className="vertical-card">
+              <span className="vertical-number">03</span>
+
+              <div>
+                <h3>Cement</h3>
+                <p>
+                  Materials and commodities supporting construction
+                  industries.
+                </p>
+              </div>
+
+              <span className="vertical-arrow">↗</span>
+            </div>
+
+            <div className="vertical-card">
+              <span className="vertical-number">04</span>
+
+              <div>
+                <h3>Coal</h3>
+                <p>Thermal and metallurgical coal for industrial applications.</p>
+                <ul>
+                  <li>
+                    Thermal Coal / Bituminous Coal for Cement / Textile /
+                    Energy (RB1 – RB2)
+                  </li>
+                  <li>
+                    Semi Coke / Metallurgical Coke / Electrode Parts /
+                    Graphitized Pet Coke
+                  </li>
+                </ul>
+              </div>
+
+              <span className="vertical-arrow">↗</span>
+            </div>
+
+            <div className="vertical-card">
+              <span className="vertical-number">05</span>
+
+              <div>
+                <h3>Agro Products</h3>
+                <p>Pakistan-origin agricultural products for global markets.</p>
+                <ul>
+                  <li>Rice — Basmati & Non-Basmati Rice from Pakistan</li>
+                  <li>Yellow Corn — Pakistan feed grade</li>
+                  <li>Sesame Seed — Pakistan</li>
+                  <li>Chicken Eggs (shells) — all sizes</li>
+                </ul>
+              </div>
+
+              <span className="vertical-arrow">↗</span>
+            </div>
+          </div>
+        </section>
+
+        <div className="stats-band">
+          <div className="stats-grid reveal-group">
+            <Stat value={1949} label="Established" />
+            <Stat value={70} suffix="+" label="Years of Trust" />
+            <Stat value={5} label="Core Verticals" />
+            <Stat value={2} label="Directors Leading Today" />
+          </div>
+        </div>
+
+        <section className="contact" id="contact">
+          <div className="contact-header reveal">
+            <div className="verticals-label">
+              <span></span>
+              GET IN TOUCH
+            </div>
+
+            <h2>Contact</h2>
+
+            <p>
+              Reach out to discuss sourcing, trade partnerships or any of the
+              markets we operate in.
+            </p>
+          </div>
+
+          <div className="contact-grid reveal">
+            <div className="contact-block">
+              <h3>Company</h3>
+              <a href="mailto:contact@maggoonsons.com">
+                contact@maggoonsons.com
+              </a>
+              <p>Telephone: 92-21-32418852</p>
+              <p>
+                Business Center, Mumtaz Hassan Road,
+                <br />
+                OFF I.I Chundrigar Road, Karachi
+              </p>
+            </div>
+
+            <div className="contact-block">
+              <h3>Directors</h3>
+
+              <div className="director">
+                <strong>Amjad Rafi</strong>
+                <span>Director</span>
+                <a href="tel:+923212487952">+92-321-2487952</a>
+                <a href="mailto:arafi@maggoonsons.com">
+                  arafi@maggoonsons.com
+                </a>
+              </div>
+
+              <div className="director">
+                <strong>Shaukat Rafi</strong>
+                <span>Director</span>
+                <a href="tel:+923002131987">+92-300-2131987</a>
+                <a href="mailto:smrafi@maggoonsons.com">
+                  smrafi@maggoonsons.com
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
+
+      <footer className="site-footer">
+        © {new Date().getFullYear()} M.R. Maggoon & Sons. All rights
+        reserved.
+      </footer>
     </div>
   );
 }
