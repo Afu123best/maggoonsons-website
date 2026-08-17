@@ -253,16 +253,13 @@ function App() {
             <div className="vertical-card">
               <span className="vertical-number">02</span>
               <div>
-                <h3>Polymers & Chemicals</h3>
-                <p>Industrial polymers and chemical raw materials for manufacturing.</p>
+                <h3>Polymers</h3>
+                <p>Industrial polymers for manufacturing and packaging.</p>
                 <ul>
                   <li>Polypropylene — Film / Tape (Raffia) / Injection (CPP / BOPP)</li>
                   <li>HDPE — Film / Injection / Monofilament Yarn</li>
                   <li>LLDPE / LDPE (Film)</li>
                   <li>PVC Resin — Suspension / Emulsion</li>
-                  <li>Raw Materials for Textile / Leather / Plastics / Rubber / Paints</li>
-                  <li>ISO Mixed Xylene / Meta-Ortho-Paraxylene</li>
-                  <li>Rubber Synthetic / 1501</li>
                 </ul>
               </div>
               <div className="vertical-image">IMAGE</div>
@@ -272,8 +269,13 @@ function App() {
             <div className="vertical-card">
               <span className="vertical-number">03</span>
               <div>
-                <h3>Cement</h3>
-                <p>Cement sourcing for construction and industrial buyers.</p>
+                <h3>Chemicals</h3>
+                <p>Raw materials for textile, leather, plastics, rubber and paints.</p>
+                <ul>
+                  <li>Raw Materials for Textile / Leather / Plastics / Rubber / Paints</li>
+                  <li>ISO Mixed Xylene / Meta-Ortho-Paraxylene</li>
+                  <li>Rubber Synthetic / 1501</li>
+                </ul>
               </div>
               <div className="vertical-image">IMAGE</div>
               <span className="vertical-arrow">↗</span>
