@@ -300,7 +300,7 @@ function App() {
                 </ul>
               </div>
               <div className="vertical-image">
-                <img src="/coal.jpg" src="Coal" />
+                <img src="/coal.jpg" alt="Coal" />
               </div>
               <span className="vertical-arrow">↗</span>
             </div>
