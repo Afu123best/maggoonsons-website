@@ -246,7 +246,9 @@ function App() {
                   <li>Synthetic Yarns</li>
                 </ul>
               </div>
-              <div className="vertical-image">IMAGE</div>
+              <div className="vertical-image">
+                <img src="/textiles.jpg" alt="Textiles" />
+              </div>
               <span className="vertical-arrow">↗</span>
             </div>
 
@@ -262,7 +264,9 @@ function App() {
                   <li>PVC Resin — Suspension / Emulsion</li>
                 </ul>
               </div>
-              <div className="vertical-image">IMAGE</div>
+              <div className="vertical-image">
+                <img src="/polymers.jpg" alt="Polymers" />
+              </div>
               <span className="vertical-arrow">↗</span>
             </div>
 
@@ -277,7 +281,9 @@ function App() {
                   <li>Rubber Synthetic / 1501</li>
                 </ul>
               </div>
-              <div className="vertical-image">IMAGE</div>
+              <div className="vertical-image">
+                <img src="/chemicals.jpg" alt="Chemicals" />
+              </div>
               <span className="vertical-arrow">↗</span>
             </div>
 
@@ -293,7 +299,9 @@ function App() {
                   <li>Graphitized Pet Coke</li>
                 </ul>
               </div>
-              <div className="vertical-image">IMAGE</div>
+              <div className="vertical-image">
+                <img src="/coal.jpg" src="Coal" />
+              </div>
               <span className="vertical-arrow">↗</span>
             </div>
 
@@ -309,7 +317,9 @@ function App() {
                   <li>Chicken Eggs (shells) — all sizes</li>
                 </ul>
               </div>
-              <div className="vertical-image">IMAGE</div>
+              <div className="vertical-image">
+                <img src="/agro1.jpg" alt="Agro Products" />
+              </div>
               <span className="vertical-arrow">↗</span>
             </div>
           </div>
