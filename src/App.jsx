@@ -293,7 +293,7 @@ function App() {
           </div>
 
           <div className="verticals-list reveal-group">
-            <div className="vertical-card">
+            <div className="vertical-card" style={{ marginBottom: "2.5rem" }}>
               <span className="vertical-number">01</span>
 
               <div>
@@ -309,7 +309,7 @@ function App() {
               <span className="vertical-arrow">↗</span>
             </div>
 
-            <div className="vertical-card">
+            <div className="vertical-card" style={{ marginBottom: "2.5rem" }}>
               <span className="vertical-number">02</span>
 
               <div>
@@ -326,17 +326,18 @@ function App() {
                   <li>LLDPE / LDPE (Film)</li>
                   <li>PVC Resin, Suspension / Emulsion</li>
                   <li>
-                    Raw materials for Textile / Leather / Plastics / Rubber
+                    Raw Materials for Textile / Leather / Plastics / Rubber /
+                    Paints
                   </li>
-                  <li>ISO Mixed Xylene / Meta-Ortho-Xylene</li>
-                  <li>Synthetic Rubber / SBR 1501</li>
+                  <li>ISO Mixed Xylene / Meta-Ortho-Paraxylene</li>
+                  <li>Rubber Synthetic / 1501</li>
                 </ul>
               </div>
 
               <span className="vertical-arrow">↗</span>
             </div>
 
-            <div className="vertical-card">
+            <div className="vertical-card" style={{ marginBottom: "2.5rem" }}>
               <span className="vertical-number">03</span>
 
               <div>
@@ -350,7 +351,7 @@ function App() {
               <span className="vertical-arrow">↗</span>
             </div>
 
-            <div className="vertical-card">
+            <div className="vertical-card" style={{ marginBottom: "2.5rem" }}>
               <span className="vertical-number">04</span>
 
               <div>
@@ -367,7 +368,7 @@ function App() {
               <span className="vertical-arrow">↗</span>
             </div>
 
-            <div className="vertical-card">
+            <div className="vertical-card" style={{ marginBottom: "2.5rem" }}>
               <span className="vertical-number">05</span>
 
               <div>
