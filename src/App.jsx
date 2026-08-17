@@ -91,7 +91,6 @@ function App() {
 
         <nav>
           <a href="#about">About</a>
-          <a href="#process">Process</a>
           <a href="#verticals">Our Business</a>
           <a href="#contact">Contact</a>
         </nav>
@@ -216,63 +215,6 @@ function App() {
           </div>
         </section>
 
-        <section className="process" id="process">
-          <div className="process-header reveal">
-            <div className="process-label">
-              <span></span>
-              HOW WE WORK
-            </div>
-
-            <h2>
-              From sourcing
-              <em> to delivery.</em>
-            </h2>
-
-            <p>
-              Four steps that guide every shipment we handle, from first
-              contact to final delivery.
-            </p>
-          </div>
-
-          <div className="process-steps reveal-group">
-            <div className="process-step">
-              <span className="step-number">01</span>
-              <h3>Sourcing</h3>
-              <p>
-                Identifying and vetting suppliers across our network of
-                international partners.
-              </p>
-            </div>
-
-            <div className="process-step">
-              <span className="step-number">02</span>
-              <h3>Quality Assurance</h3>
-              <p>
-                Verifying specifications and quality standards before every
-                shipment leaves.
-              </p>
-            </div>
-
-            <div className="process-step">
-              <span className="step-number">03</span>
-              <h3>Trade & Logistics</h3>
-              <p>
-                Managing documentation, shipping and customs clearance across
-                borders.
-              </p>
-            </div>
-
-            <div className="process-step">
-              <span className="step-number">04</span>
-              <h3>Delivery</h3>
-              <p>
-                Coordinating final-mile logistics so materials reach buyers
-                on time, every time.
-              </p>
-            </div>
-          </div>
-        </section>
-
         <section className="verticals" id="verticals">
           <div className="verticals-header reveal">
             <div className="verticals-label">
@@ -293,84 +235,68 @@ function App() {
           </div>
 
           <div className="verticals-list reveal-group">
-            <div className="vertical-card" style={{ marginBottom: "2.5rem" }}>
+            <div className="vertical-card">
               <span className="vertical-number">01</span>
-
               <div>
                 <h3>Textiles</h3>
-                <p>Raw materials and polymers for textile manufacturing.</p>
+                <p>Raw materials and fabrics for textile manufacturing.</p>
                 <ul>
-                  <li>Cotton Yarns / PC Yarns / Cotton Lyocell Yarns</li>
+                  <li>Cotton Yarns / PC / PV Yarns / Cotton Lyocell Yarns</li>
                   <li>Cotton Grey Fabrics</li>
                   <li>Synthetic Yarns</li>
                 </ul>
               </div>
-
+              <div className="vertical-image">IMAGE</div>
               <span className="vertical-arrow">↗</span>
             </div>
 
-            <div className="vertical-card" style={{ marginBottom: "2.5rem" }}>
+            <div className="vertical-card">
               <span className="vertical-number">02</span>
-
               <div>
                 <h3>Polymers & Chemicals</h3>
-                <p>
-                  Industrial materials serving diverse manufacturing sectors.
-                </p>
+                <p>Industrial polymers and chemical raw materials for manufacturing.</p>
                 <ul>
-                  <li>
-                    Polypropylene — Film/Tape (Raffia) / Injection / CPP /
-                    BOPP
-                  </li>
+                  <li>Polypropylene — Film / Tape (Raffia) / Injection (CPP / BOPP)</li>
                   <li>HDPE — Film / Injection / Monofilament Yarn</li>
                   <li>LLDPE / LDPE (Film)</li>
-                  <li>PVC Resin, Suspension / Emulsion</li>
-                  <li>
-                    Raw Materials for Textile / Leather / Plastics / Rubber /
-                    Paints
-                  </li>
+                  <li>PVC Resin — Suspension / Emulsion</li>
+                  <li>Raw Materials for Textile / Leather / Plastics / Rubber / Paints</li>
                   <li>ISO Mixed Xylene / Meta-Ortho-Paraxylene</li>
                   <li>Rubber Synthetic / 1501</li>
                 </ul>
               </div>
-
+              <div className="vertical-image">IMAGE</div>
               <span className="vertical-arrow">↗</span>
             </div>
 
-            <div className="vertical-card" style={{ marginBottom: "2.5rem" }}>
+            <div className="vertical-card">
               <span className="vertical-number">03</span>
-
               <div>
-                <h3>Chemicals</h3>
-                <p>
-                  Raw materials for textiles, leather, plastics, rubber and
-                  paints.
-                </p>
+                <h3>Cement</h3>
+                <p>Cement sourcing for construction and industrial buyers.</p>
               </div>
-
+              <div className="vertical-image">IMAGE</div>
               <span className="vertical-arrow">↗</span>
             </div>
 
-            <div className="vertical-card" style={{ marginBottom: "2.5rem" }}>
+            <div className="vertical-card">
               <span className="vertical-number">04</span>
-
               <div>
                 <h3>Coal</h3>
-                <p>
-                  Thermal and metallurgical coal for industrial applications.
-                </p>
+                <p>Thermal and metallurgical coal for industrial applications.</p>
                 <ul>
-                  <li>Thermal Coal for Cement / Textile / Energy</li>
-                  <li>Semi-Coke / Metallurgical Coke / Pet-Coke</li>
+                  <li>Thermal / Bituminous Coal for Cement, Textile & Energy (RB1–RB2)</li>
+                  <li>Semi Coke / Metallurgical Coke / Pet Coke (Electrode Paste)</li>
+                  <li>CP Calcined Petroleum Coke</li>
+                  <li>Graphitized Pet Coke</li>
                 </ul>
               </div>
-
+              <div className="vertical-image">IMAGE</div>
               <span className="vertical-arrow">↗</span>
             </div>
 
-            <div className="vertical-card" style={{ marginBottom: "2.5rem" }}>
+            <div className="vertical-card">
               <span className="vertical-number">05</span>
-
               <div>
                 <h3>Agro Products</h3>
                 <p>Pakistan-origin agricultural products for global markets.</p>
@@ -381,7 +307,7 @@ function App() {
                   <li>Chicken Eggs (shells) — all sizes</li>
                 </ul>
               </div>
-
+              <div className="vertical-image">IMAGE</div>
               <span className="vertical-arrow">↗</span>
             </div>
           </div>
