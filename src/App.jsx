@@ -190,10 +190,10 @@ function App() {
             <div>
               <p>
                 MRM was formed in 1949 by Mian Mohammad Rafi (Late) as a
-                trading company focused on the import of textile machinery/packaging materials/fishing nets etc.
-                and other goods. Over time, the company evolved into a
-                leading sourcing agent for multiple businesses and brands in
-                Pakistan.
+                trading company focused on the import of textile machinery,
+                packaging materials, fishing nets and other goods. Over time,
+                the company evolved into a leading sourcing agent for
+                multiple businesses and brands in Pakistan.
               </p>
 
               <p>
@@ -265,7 +265,10 @@ function App() {
             <div className="process-step">
               <span className="step-number">04</span>
               <h3>Delivery</h3>
-              <p>Ensuring materials reach buyers on time, every time.</p>
+              <p>
+                Coordinating final-mile logistics so materials reach buyers
+                on time, every time.
+              </p>
             </div>
           </div>
         </section>
@@ -283,9 +286,9 @@ function App() {
             </h2>
 
             <p>
-              We operate across a diverse range of industries, sourcing and
-              connecting businesses with trusted international suppliers and
-              markets.
+              We operate across a diverse range of industries, sourcing
+              materials and connecting trusted international partners with
+              buyers across markets.
             </p>
           </div>
 
@@ -297,15 +300,9 @@ function App() {
                 <h3>Textiles</h3>
                 <p>Raw materials and polymers for textile manufacturing.</p>
                 <ul>
-                  <li>
-                    Cotton Yarns/PC Yarns/Cotton Lyocell Yarns/
-                  </li>
-                  <li>
-                    Cotton Grey Fabrics
-                  </li>
-                  <li>
-                    Synthetic Yarns
-                  </li>
+                  <li>Cotton Yarns / PC Yarns / Cotton Lyocell Yarns</li>
+                  <li>Cotton Grey Fabrics</li>
+                  <li>Synthetic Yarns</li>
                 </ul>
               </div>
 
@@ -329,11 +326,10 @@ function App() {
                   <li>LLDPE / LDPE (Film)</li>
                   <li>PVC Resin, Suspension / Emulsion</li>
                   <li>
-                    Raw materials for Textile / Leather / Plastics / Rubber /
-                    PRWES
+                    Raw materials for Textile / Leather / Plastics / Rubber
                   </li>
-                  <li>ISO Mixed Xylene / Meta-Ortho-Pharamkalene</li>
-                  <li>Rubber Synthetic / 1501</li>
+                  <li>ISO Mixed Xylene / Meta-Ortho-Xylene</li>
+                  <li>Synthetic Rubber / SBR 1501</li>
                 </ul>
               </div>
 
@@ -344,10 +340,10 @@ function App() {
               <span className="vertical-number">03</span>
 
               <div>
-                <h3>Cement</h3>
+                <h3>Chemicals</h3>
                 <p>
-                  Materials and commodities supporting construction
-                  industries.
+                  Raw materials for textiles, leather, plastics, rubber and
+                  paints.
                 </p>
               </div>
 
@@ -359,16 +355,12 @@ function App() {
 
               <div>
                 <h3>Coal</h3>
-                <p>Thermal and metallurgical coal for industrial applications.</p>
+                <p>
+                  Thermal and metallurgical coal for industrial applications.
+                </p>
                 <ul>
-                  <li>
-                    Thermal Coal / Bituminous Coal for Cement / Textile /
-                    Energy (RB1 – RB2)
-                  </li>
-                  <li>
-                    Semi Coke / Metallurgical Coke / Electrode Parts /
-                    Graphitized Pet Coke
-                  </li>
+                  <li>Thermal Coal for Cement / Textile / Energy</li>
+                  <li>Semi-Coke / Metallurgical Coke / Pet-Coke</li>
                 </ul>
               </div>
 
@@ -382,9 +374,9 @@ function App() {
                 <h3>Agro Products</h3>
                 <p>Pakistan-origin agricultural products for global markets.</p>
                 <ul>
-                  <li>Rice — Basmati & Non-Basmati Rice from Pakistan</li>
+                  <li>Rice, Basmati / Non-Basmati</li>
                   <li>Yellow Corn — Pakistan feed grade</li>
-                  <li>Sesame Seed — Pakistan</li>
+                  <li>Sesame Seed — Pakistani</li>
                   <li>Chicken Eggs (shells) — all sizes</li>
                 </ul>
               </div>
@@ -426,9 +418,9 @@ function App() {
               </a>
               <p>Telephone: 92-21-32418852</p>
               <p>
-                Business Center, Mumtaz Hassan Road,
+                512 Fifth Floor Business Center, Mumtaz Hassan Road,
                 <br />
-                OFF I.I Chundrigar Road, Karachi
+                OFF I.I Chundrigar Road, Karachi (Pakistan)
               </p>
             </div>
 
@@ -441,15 +433,6 @@ function App() {
                 <a href="tel:+923212487952">+92-321-2487952</a>
                 <a href="mailto:arafi@maggoonsons.com">
                   arafi@maggoonsons.com
-                </a>
-              </div>
-
-              <div className="director">
-                <strong>Shaukat Rafi</strong>
-                <span>Director</span>
-                <a href="tel:+923002131987">+92-300-2131987</a>
-                <a href="mailto:smrafi@maggoonsons.com">
-                  smrafi@maggoonsons.com
                 </a>
               </div>
             </div>
