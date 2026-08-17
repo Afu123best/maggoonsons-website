@@ -189,8 +189,8 @@ function App() {
 
             <div>
               <p>
-                MRM was formed in 1949 by Mr. Mian Mohammad Rafi (Late) as a
-                trading company focused on the import of tea, fishing nets
+                MRM was formed in 1949 by Mian Mohammad Rafi (Late) as a
+                trading company focused on the import of textile machinery/packaging materials/fishing nets etc.
                 and other goods. Over time, the company evolved into a
                 leading sourcing agent for multiple businesses and brands in
                 Pakistan.
@@ -198,7 +198,7 @@ function App() {
 
               <p>
                 We exist because of the relationships we build. MRM focuses
-                on the needs of both buyer and seller, bridging any gaps
+                on the needs of both buyers and sellers, bridging any gaps
                 between them along the way.
               </p>
 
@@ -298,12 +298,14 @@ function App() {
                 <p>Raw materials and polymers for textile manufacturing.</p>
                 <ul>
                   <li>
-                    Polypropylene — Film/Tape (Raffia) / Injection / CPP /
-                    BOPP
+                    Cotton Yarns/PC Yarns/Cotton Lyocell Yarns/
                   </li>
-                  <li>HDPE — Film / Injection / Monofilament Yarn</li>
-                  <li>LLDPE / LDPE (Film)</li>
-                  <li>DYC Resin, Suspension / Emulsion</li>
+                  <li>
+                    Cotton Grey Fabrics
+                  </li>
+                  <li>
+                    Synthetic Yarns
+                  </li>
                 </ul>
               </div>
 
@@ -319,6 +321,13 @@ function App() {
                   Industrial materials serving diverse manufacturing sectors.
                 </p>
                 <ul>
+                  <li>
+                    Polypropylene — Film/Tape (Raffia) / Injection / CPP /
+                    BOPP
+                  </li>
+                  <li>HDPE — Film / Injection / Monofilament Yarn</li>
+                  <li>LLDPE / LDPE (Film)</li>
+                  <li>PVC Resin, Suspension / Emulsion</li>
                   <li>
                     Raw materials for Textile / Leather / Plastics / Rubber /
                     PRWES
