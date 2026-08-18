@@ -322,6 +322,21 @@ function App() {
               </div>
               <span className="vertical-arrow">↗</span>
             </div>
+            <div className="vertical-card">
+              <span className="vertical-number">06</span>
+              <div>
+                <h3>Cement</h3>
+                <p>Pakistani cement for export.</p>
+                <ul>
+                  <li>OPC (Ordinary Portland Cement)</li>
+                  <li>SRC (Sulphate Resistant Cement)</li>
+                  <li>Rapid Hardening Cement</li>
+                  <li>Low Alkali Cement</li>
+                </ul>
+              </div>
+              <div className="vertical-image">IMAGE</div>
+              <span className="vertical-arrow">↗</span>
+            </div>
           </div>
         </section>
 
@@ -364,7 +379,7 @@ function App() {
             </div>
 
             <div className="contact-block">
-              <h3>Directors</h3>
+              <h3>Director</h3>
 
               <div className="director">
                 <strong>Amjad Rafi</strong>

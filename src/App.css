@@ -95,6 +95,10 @@ a {
   transition-delay: 360ms;
 }
 
+.reveal-group.in-view .vertical-card:nth-child(6) {
+  transition-delay: 450ms;
+}
+
 .reveal-group.in-view .stat:nth-child(1) {
   transition-delay: 0ms;
 }
