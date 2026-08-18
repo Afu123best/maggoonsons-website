@@ -247,7 +247,7 @@ function App() {
                 </ul>
               </div>
               <div className="vertical-image">
-                <img src="/textiles.jpg" alt="Textiles" />
+                <img src="/yarns1.jpg" alt="Textiles" />
               </div>
               <span className="vertical-arrow">↗</span>
             </div>
