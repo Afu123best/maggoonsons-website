@@ -345,7 +345,6 @@ function App() {
             <Stat value={1949} label="Established" />
             <Stat value={70} suffix="+" label="Years of Trust" />
             <Stat value={5} label="Core Verticals" />
-            <Stat value={2} label="Directors Leading Today" />
           </div>
         </div>
 
