@@ -344,7 +344,7 @@ function App() {
           <div className="stats-grid reveal-group">
             <Stat value={1949} label="Established" />
             <Stat value={70} suffix="+" label="Years of Trust" />
-            <Stat value={5} label="Core Verticals" />
+            <Stat value={6} label="Core Verticals" />
           </div>
         </div>
 
