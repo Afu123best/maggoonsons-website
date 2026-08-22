@@ -334,7 +334,9 @@ function App() {
                   <li>Low Alkali Cement</li>
                 </ul>
               </div>
-              <div className="vertical-image">IMAGE</div>
+              <div className="vertical-image">
+                <img src="/cement.jpg" alt="Cement"/>
+              </div>
               <span className="vertical-arrow">↗</span>
             </div>
           </div>
