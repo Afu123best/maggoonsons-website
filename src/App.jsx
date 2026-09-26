@@ -380,7 +380,7 @@ function App() {
             </div>
 
             <div className="contact-block">
-              <h3>Director</h3>
+              <h3>Directors</h3>
 
               <div className="director">
                 <strong>Amjad Rafi</strong>
