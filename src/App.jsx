@@ -335,7 +335,7 @@ function App() {
                 </ul>
               </div>
               <div className="vertical-image">
-                <img src="/cement.jpg" alt="Cement"/>
+                <img src="/cement.jpg" alt="Cement" />
               </div>
               <span className="vertical-arrow">↗</span>
             </div>
@@ -389,6 +389,11 @@ function App() {
                 <a href="mailto:arafi@maggoonsons.com">
                   arafi@maggoonsons.com
                 </a>
+              </div>
+              <div className="director">
+                <strong>Shaukat Rafi</strong>
+                <span>Director</span>
+                <a href="tel:+923002131987">+92-300-2131987</a>
               </div>
             </div>
           </div>
